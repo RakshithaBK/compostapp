@@ -1,0 +1,30 @@
+form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width:300px;
+}
+
+input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    height: 44px;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+    
+  }
+
+  button{
+      width:100%;
+      background-color: #0088FF;
+      color: white;
+}
+
+  .row{
+      margin: 0px 0px 20px 0px;
+  }

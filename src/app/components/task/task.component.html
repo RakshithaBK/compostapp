@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div [class.overlay]="loading">
+  <!-- Table is a seperate component -->
+<app-table (toggle)="onSelectionChange($event,$event)" [events]="eventsSubject.asObservable()"></app-table>
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<form *ngIf="isSelected" [formGroup]="profileForm" >
+    <h2><span class="username">UserName:</span> {{selectedRow.username}}</h2>
+    <div class="row">
+            <div class="col-75">
+              <input id="title" type="text" formControlName="title" placeholder="Post title.." required>
+            </div>
+     </div>
+     <div class="row">
+            <div class="col-75">
+              <textarea id="body" type="text" formControlName="body"  placeholder="Post Body.." required></textarea>
+            </div>
+     </div>
+    <div class="row">
+        <p>Complete the form to enable submit button.</p>
+        <button mat-raised-button (click)="clear()">Deselect</button>
+        <button mat-raised-button type="submit"  (click)="onSubmit()" [disabled]="!profileForm.valid">Submit</button>
+    </div>
+</form>
+</div>
+
