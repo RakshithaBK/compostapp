@@ -1,0 +1,39 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" [class.overlay]="loading">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Posts Column -->
+    <ng-container matColumnDef="totalposts">
+      <th mat-header-cell *matHeaderCellDef> Posts </th>
+      <td mat-cell *matCellDef="let element"> {{element.posts.length}} </td>
+    </ng-container>
+  
+   <!-- Comments Column -->
+  <ng-container matColumnDef="totalcomments">
+    <th mat-header-cell *matHeaderCellDef>Comments</th>
+    <td mat-cell *matCellDef="let element">{{element.totalcomments}}</td>
+  </ng-container>
+
+  <!-- Table header read from array of displayedColumns -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    *matRowDef="let row; columns: displayedColumns;" 
+      mat-row [ngClass]="(selectedRowIndex === row.id)?'selected':'deselect'" (click)="selectRow(row)"></tr>
+</table>
+<mat-paginator [length]= "100"
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator>
+<mat-spinner *ngIf="loading"></mat-spinner>
+

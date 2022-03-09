@@ -1,0 +1,52 @@
+.mat-toolbar{
+    background-color: #0088FF;
+    color: white;
+    width: 100% !important;
+    margin-bottom: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 56px;
+    width: 100%;
+    
+  }
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding-right: 10px;
+}
+
+img{
+    text-align: center;
+    margin: auto;
+}
+  .mat-button{
+     color: white;
+  }
+  .spacer{
+    flex: 1 1 auto;
+  }
+.langbutton{
+    position: absolute;
+    right: 0;
+    background: none;
+    border:none;
+    color: white;
+    display: grid;
+}
+.cdk-overlay-pane{
+    float:right;
+    margin: 0px;
+}
+button.mat-menu-item{
+    text-align: center;
+}
+
+.logoutbutton{
+  right: 55px;
+  background: none;
+  border: none;
+  color: white;
+  position: absolute;
+}

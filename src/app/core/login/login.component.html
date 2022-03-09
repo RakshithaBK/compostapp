@@ -1,0 +1,18 @@
+<div class="logincontainer">
+    <form  [formGroup]="loginForm" >
+        <div class="row">
+                <div class="col-75">
+                  <input matInput id="username" type="text" formControlName="username" placeholder="username" required>
+                </div>
+         </div>
+         <div class="row">
+                <div class="col-75">
+                  <input matInput id="password" type="password" formControlName="password"  placeholder="password" required>
+                </div>
+         </div>
+        <div class="row">
+            <button mat-raised-button (click)="signIn()">Sign up</button>
+            <button mat-raised-button type="submit"  (click)="onSubmit()" [disabled]="!loginForm.valid">Login</button>
+        </div>
+    </form>
+</div>

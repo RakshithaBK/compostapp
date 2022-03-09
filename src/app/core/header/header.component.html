@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <!-- Router link to navigation -->
+    <a mat-button routerLink="/home">Home</a>
+    <a mat-button routerLink="/dashboard">Dashboard</a>
+    <a mat-button routerLink="/task">Task</a>
+    <a mat-button routerLink="/aboutus">About Us</a>
+     
+      <button class="langbutton"mat-button [matMenuTriggerFor]="menu">
+       <img src="../../assets/language_white_24dp.svg">{{option}}
+      </button>
+      <button class="logoutbutton" (click)="onlogout()" mat-button >Logout</button>
+       <!-- Language toggle Menu -->
+     <mat-menu #menu="matMenu">
+       <button (click)="onClick(option)" *ngFor="let option of lang" mat-menu-item>
+           {{option}}
+       </button>
+     </mat-menu>
+    
+</mat-toolbar>
+
+
+
+
