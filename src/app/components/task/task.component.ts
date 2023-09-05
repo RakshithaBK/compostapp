@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { UserserviceService } from '../../services/userservice.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -11,9 +11,9 @@ import { Subject } from 'rxjs';
 })
 export class TaskComponent implements OnInit {
 
-  profileForm = new FormGroup({
-    title: new FormControl(''),
-    body: new FormControl(''),
+  profileForm = new UntypedFormGroup({
+    title: new UntypedFormControl(''),
+    body: new UntypedFormControl(''),
   });
   selectedRow: any;
   isSelected: Boolean;
